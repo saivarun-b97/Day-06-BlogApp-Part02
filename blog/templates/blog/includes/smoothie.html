@@ -1,0 +1,24 @@
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+<li>
+    <article class="post">
+        <a href="{% url "single-post-page" slug="smoothie" %}">
+            <img src="{% static "blog/images/smoothie.jpeg" %}" alt="Smoothie">
+        </a>
+        <div class="post__content">
+            <h3>Smoothie</h3>
+            {% if request.path == "/posts" %}
+            <h4>"Discover Delicious and Nutritious Smoothie Recipes for a Healthier You!"</h4>
+            {% else %}
+            <p>
+                A smoothie is a beverage made by puréeing ingredients in a blender. A smoothie commonly has a liquid base, such as fruit juice or milk, yogurt or ice cream. 
+                Other ingredients may be added, including fruits, vegetables, non-dairy milk, crushed ice, whey powder or nutritional supplements.
+            </p>
+            {% endif %}
+        </div>
+    </article>
+</li>

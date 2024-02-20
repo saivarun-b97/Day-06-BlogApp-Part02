@@ -1,0 +1,24 @@
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+<li>
+    <article class="post">
+        <a href="{% url "single-post-page" slug="pasta" %}">
+            <img src="{% static "blog/images/pasta.jpeg" %}" alt="Pasta">
+        </a>
+        <div class="post__content">
+            <h3>Pasta</h3>
+            {% if request.path == "/posts" %}
+            <h4>"Delicious Pasta: A Taste of Italy in Every Bite"</h4>
+            {% else %}
+            <p>
+                Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.
+                While noodles are believed to have originated in Asia, pasta is believed to have originated in Italy and is a staple food of Italian cuisine.
+            </p>
+            {% endif %}
+        </div>
+    </article>
+</li>

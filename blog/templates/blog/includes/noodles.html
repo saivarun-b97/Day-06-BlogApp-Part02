@@ -1,0 +1,24 @@
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+<li>
+    <article class="post">
+        <a href="{% url "single-post-page" slug="noodles" %}">
+            <img src="{% static "blog/images/noodles.jpeg" %}" alt="Noodles">
+        </a>
+        <div class="post__content">
+            <h3>Noodles</h3>
+            {% if request.path == "/posts" %}
+            <h4>"Discover the Irresistible World of Noodles: A Culinary Adventure Awaits!"</h4>
+            {% else %}
+            <p>
+                Noodles are a type of food made from unleavened dough which is either rolled flat and cut, stretched, or extruded, into long strips or strings.
+                Noodles are a staple food in many cultures and made into a variety of shapes.
+            </p>
+            {% endif %}
+        </div>
+    </article>
+</li>

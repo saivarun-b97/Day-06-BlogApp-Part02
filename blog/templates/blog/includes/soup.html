@@ -1,0 +1,25 @@
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+<li>
+    <article class="post">
+        <a href="{% url "single-post-page" slug="soup" %}">
+            <img src="{% static "blog/images/soup.jpeg" %}" alt="Soup">
+        </a>
+        <div class="post__content">
+            <h3>Soup</h3>
+            {% if request.path == "/posts" %}
+            <h4>"Discover the Comforting Elegance of Homemade Soup"</h4>
+            {% else %}
+            <p>
+                Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, milk, or water. 
+                Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth. 
+                Soups are similar to stews, and in some cases there may not be a clear distinction between the two; however, soups generally have more liquid (broth) than stews.
+            </p>
+            {% endif %}
+        </div>
+    </article>
+</li>

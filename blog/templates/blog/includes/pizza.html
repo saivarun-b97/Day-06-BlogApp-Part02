@@ -1,0 +1,24 @@
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+<li>
+    <article class="post">
+        <a href="{% url "single-post-page" slug="pizza" %}">
+            <img src="{% static "blog/images/pizza.jpeg" %}" alt="Pizza">
+        </a>
+        <div class="post__content">
+            <h3>Pizza</h3>
+            {% if request.path == "/posts" %}
+            <h4>"Discover the Irresistible Delight of Perfect Pizza Perfection"</h4>
+            {% else %}
+            <p>
+                Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven.
+                The term pizza was first recorded in the year 997, in a Latin manuscript from the southern Italian town of Gaeta, in Lazio, on the border with Campania.
+            </p>
+            {% endif %}
+        </div>
+    </article>
+</li>

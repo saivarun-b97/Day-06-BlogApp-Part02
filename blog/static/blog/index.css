@@ -1,14 +1,28 @@
 img {
     width: 100px;
     height: 100px;
+    float: left;
 }
 
 .post {
     background-color: gray;
     border: 3px solid red;
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post:hover {
     background-color: pink;
+}
+
+article {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 25px;
 }
 
